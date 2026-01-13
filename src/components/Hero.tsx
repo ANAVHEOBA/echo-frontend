@@ -92,7 +92,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#264a54] text-white text-[15px] font-medium rounded-full hover:bg-[#1b3640] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#052233] text-[#FAFAFA] text-[15px] font-medium rounded-[9px] hover:bg-[#0a3045] transition-colors shadow-sm"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -101,7 +101,7 @@ export default function Hero() {
               </a>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[#c6d8de] text-[#264a54] text-[15px] font-medium rounded-full hover:bg-[#f5f9fa] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#FAFAFA] border border-[#c8dce3] text-[#052233] text-[15px] font-medium rounded-[9px] hover:bg-white transition-colors shadow-sm"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
