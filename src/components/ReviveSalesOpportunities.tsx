@@ -26,7 +26,7 @@ export default function ReviveSalesOpportunities() {
                     {/* Visual Area - Left Side */}
                     <div className="lg:order-1 order-2 lg:w-1/2 w-full h-[300px] sm:h-[400px] lg:h-[500px] relative flex items-center justify-center">
                         {/* Scaling wrapper for mobile */}
-                        <div className="w-full h-full flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform duration-300">
+                        <div className="w-full h-full flex items-center justify-center scale-[0.5] sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform duration-300">
                             <motion.div
                                 style={{
                                     rotateX: smoothRotateX,

@@ -96,7 +96,7 @@ export default function EffortlessCRM() {
                             <span className="text-sm font-medium text-slate-700">Product</span>
                         </div>
 
-                        <h2 className="text-[48px] leading-[1.1] font-medium tracking-tight text-[#0F172A] mb-6">
+                        <h2 className="text-3xl md:text-[48px] leading-[1.1] font-medium tracking-tight text-[#0F172A] mb-6">
                             Effortless CRM Automation
                         </h2>
 
@@ -115,7 +115,7 @@ export default function EffortlessCRM() {
                     {/* Board Area */}
                     <div className="lg:w-1/2 w-full h-[300px] sm:h-[400px] lg:h-[500px] relative flex items-center justify-center">
                         {/* Scaling wrapper for mobile */}
-                        <div className="w-full h-full flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform duration-300">
+                        <div className="w-full h-full flex items-center justify-center scale-[0.5] sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform duration-300">
                             <motion.div
                                 style={{
                                     rotateX: smoothRotateX,
