@@ -34,7 +34,7 @@ export default function EffortlessCRM() {
         isInitialized.current = true;
 
         const timers: NodeJS.Timeout[] = [];
-        
+
         // Move card through columns
         const moveCard = (card: AnimatedCard) => {
             if (card.column === 'new') {
@@ -113,138 +113,141 @@ export default function EffortlessCRM() {
                     </div>
 
                     {/* Board Area */}
-                    <div className="lg:w-1/2 w-full h-[500px] relative flex items-center justify-center">
-                        <motion.div
-                            style={{
-                                rotateX: smoothRotateX,
-                                rotateY: smoothRotateY,
-                                transformStyle: "preserve-3d",
-                            }}
-                            className="relative w-full max-w-[600px]"
-                        >
-                            {/* Kanban Board */}
-                            <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6">
-                                {/* Columns */}
-                                <div className="grid grid-cols-3 gap-4 relative">
+                    <div className="lg:w-1/2 w-full h-[300px] sm:h-[400px] lg:h-[500px] relative flex items-center justify-center">
+                        {/* Scaling wrapper for mobile */}
+                        <div className="w-full h-full flex items-center justify-center scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-center transition-transform duration-300">
+                            <motion.div
+                                style={{
+                                    rotateX: smoothRotateX,
+                                    rotateY: smoothRotateY,
+                                    transformStyle: "preserve-3d",
+                                }}
+                                className="relative w-full max-w-[600px]"
+                            >
+                                {/* Kanban Board */}
+                                <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6">
+                                    {/* Columns */}
+                                    <div className="grid grid-cols-3 gap-4 relative">
 
-                                    {/* Column 1: New Deals */}
-                                    <div className="flex flex-col gap-3 min-h-[300px]">
-                                        <div className="text-sm font-semibold text-slate-700 mb-2 text-center">
-                                            New Deals
-                                        </div>
-                                        {/* 2 Static cards */}
-                                        <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <div className="w-4 h-4 rounded bg-slate-300"></div>
-                                                <div className="h-2 w-20 bg-slate-200 rounded"></div>
+                                        {/* Column 1: New Deals */}
+                                        <div className="flex flex-col gap-3 min-h-[300px]">
+                                            <div className="text-sm font-semibold text-slate-700 mb-2 text-center">
+                                                New Deals
                                             </div>
-                                            <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
-                                            <div className="h-2 w-3/4 bg-slate-200 rounded"></div>
-                                        </div>
-                                        <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <div className="w-4 h-4 rounded bg-slate-300"></div>
-                                                <div className="h-2 w-16 bg-slate-200 rounded"></div>
+                                            {/* 2 Static cards */}
+                                            <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <div className="w-4 h-4 rounded bg-slate-300"></div>
+                                                    <div className="h-2 w-20 bg-slate-200 rounded"></div>
+                                                </div>
+                                                <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
+                                                <div className="h-2 w-3/4 bg-slate-200 rounded"></div>
                                             </div>
-                                            <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
-                                            <div className="h-2 w-2/3 bg-slate-200 rounded"></div>
+                                            <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <div className="w-4 h-4 rounded bg-slate-300"></div>
+                                                    <div className="h-2 w-16 bg-slate-200 rounded"></div>
+                                                </div>
+                                                <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
+                                                <div className="h-2 w-2/3 bg-slate-200 rounded"></div>
+                                            </div>
                                         </div>
+
+                                        {/* Column 2: In Progress */}
+                                        <div className="flex flex-col gap-3 min-h-[300px]">
+                                            <div className="text-sm font-semibold text-slate-700 mb-2 text-center">
+                                                In Progress
+                                            </div>
+                                            {/* 2 Static cards */}
+                                            <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <div className="w-4 h-4 rounded bg-slate-300"></div>
+                                                    <div className="h-2 w-20 bg-slate-200 rounded"></div>
+                                                </div>
+                                                <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
+                                                <div className="h-2 w-3/4 bg-slate-200 rounded"></div>
+                                            </div>
+                                            <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <div className="w-4 h-4 rounded bg-slate-300"></div>
+                                                    <div className="h-2 w-16 bg-slate-200 rounded"></div>
+                                                </div>
+                                                <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
+                                                <div className="h-2 w-2/3 bg-slate-200 rounded"></div>
+                                            </div>
+                                        </div>
+
+                                        {/* Column 3: Complete */}
+                                        <div className="flex flex-col gap-3 min-h-[300px]">
+                                            <div className="text-sm font-semibold text-slate-700 mb-2 text-center">
+                                                Complete
+                                            </div>
+                                        </div>
+
+                                        {/* Animated Card Layer - 3rd card that moves */}
+                                        <AnimatePresence>
+                                            {cards.map((card) => {
+                                                // Calculate position based on column
+                                                // Each column is 33.33% width + gap (1rem = 16px)
+                                                let columnPosition = 0;
+                                                let yPosition = 0;
+
+                                                if (card.column === 'new') {
+                                                    columnPosition = 0; // First column
+                                                    yPosition = 108; // Position as 3rd card in New Deals
+                                                } else if (card.column === 'progress') {
+                                                    columnPosition = 1; // Second column
+                                                    yPosition = 108; // Position as 3rd card in Progress
+                                                } else if (card.column === 'complete') {
+                                                    columnPosition = 2; // Third column
+                                                    yPosition = 40; // Position as 1st card in Complete
+                                                } else if (card.column === 'dropped') {
+                                                    columnPosition = 2; // Stay in third column
+                                                    yPosition = 500; // Drop down
+                                                }
+
+                                                return (
+                                                    <motion.div
+                                                        key={card.id}
+                                                        className="absolute top-0 bg-green-50 p-3 rounded-lg border-2 border-green-500 shadow-xl z-20"
+                                                        style={{
+                                                            width: 'calc((100% - 2rem) / 3)', // Account for gaps
+                                                            left: `calc(${columnPosition} * (100% / 3) + ${columnPosition} * 1rem)`,
+                                                        }}
+                                                        initial={{
+                                                            y: 108,
+                                                            opacity: 0,
+                                                            scale: 0.9
+                                                        }}
+                                                        animate={{
+                                                            y: yPosition,
+                                                            opacity: card.column === 'dropped' ? 0 : 1,
+                                                            scale: card.column === 'dropped' ? 0.8 : 1,
+                                                        }}
+                                                        exit={{
+                                                            opacity: 0,
+                                                            scale: 0.5
+                                                        }}
+                                                        transition={{
+                                                            duration: 0.6,
+                                                            ease: "easeInOut",
+                                                            y: { duration: card.column === 'dropped' ? 0.7 : 0.6 }
+                                                        }}
+                                                    >
+                                                        <div className="flex items-center gap-2 mb-2">
+                                                            <div className="w-4 h-4 rounded bg-green-300"></div>
+                                                            <div className="h-2 w-20 bg-green-200 rounded"></div>
+                                                        </div>
+                                                        <div className="h-2 w-full bg-green-200 rounded mb-1.5"></div>
+                                                        <div className="h-2 w-3/4 bg-green-200 rounded"></div>
+                                                    </motion.div>
+                                                );
+                                            })}
+                                        </AnimatePresence>
                                     </div>
-
-                                    {/* Column 2: In Progress */}
-                                    <div className="flex flex-col gap-3 min-h-[300px]">
-                                        <div className="text-sm font-semibold text-slate-700 mb-2 text-center">
-                                            In Progress
-                                        </div>
-                                        {/* 2 Static cards */}
-                                        <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <div className="w-4 h-4 rounded bg-slate-300"></div>
-                                                <div className="h-2 w-20 bg-slate-200 rounded"></div>
-                                            </div>
-                                            <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
-                                            <div className="h-2 w-3/4 bg-slate-200 rounded"></div>
-                                        </div>
-                                        <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <div className="w-4 h-4 rounded bg-slate-300"></div>
-                                                <div className="h-2 w-16 bg-slate-200 rounded"></div>
-                                            </div>
-                                            <div className="h-2 w-full bg-slate-200 rounded mb-1.5"></div>
-                                            <div className="h-2 w-2/3 bg-slate-200 rounded"></div>
-                                        </div>
-                                    </div>
-
-                                    {/* Column 3: Complete */}
-                                    <div className="flex flex-col gap-3 min-h-[300px]">
-                                        <div className="text-sm font-semibold text-slate-700 mb-2 text-center">
-                                            Complete
-                                        </div>
-                                    </div>
-
-                                    {/* Animated Card Layer - 3rd card that moves */}
-                                    <AnimatePresence>
-                                        {cards.map((card) => {
-                                            // Calculate position based on column
-                                            // Each column is 33.33% width + gap (1rem = 16px)
-                                            let columnPosition = 0;
-                                            let yPosition = 0;
-                                            
-                                            if (card.column === 'new') {
-                                                columnPosition = 0; // First column
-                                                yPosition = 108; // Position as 3rd card in New Deals
-                                            } else if (card.column === 'progress') {
-                                                columnPosition = 1; // Second column
-                                                yPosition = 108; // Position as 3rd card in Progress
-                                            } else if (card.column === 'complete') {
-                                                columnPosition = 2; // Third column
-                                                yPosition = 40; // Position as 1st card in Complete
-                                            } else if (card.column === 'dropped') {
-                                                columnPosition = 2; // Stay in third column
-                                                yPosition = 500; // Drop down
-                                            }
-                                            
-                                            return (
-                                                <motion.div
-                                                    key={card.id}
-                                                    className="absolute top-0 bg-green-50 p-3 rounded-lg border-2 border-green-500 shadow-xl z-20"
-                                                    style={{
-                                                        width: 'calc((100% - 2rem) / 3)', // Account for gaps
-                                                        left: `calc(${columnPosition} * (100% / 3) + ${columnPosition} * 1rem)`,
-                                                    }}
-                                                    initial={{ 
-                                                        y: 108,
-                                                        opacity: 0,
-                                                        scale: 0.9
-                                                    }}
-                                                    animate={{
-                                                        y: yPosition,
-                                                        opacity: card.column === 'dropped' ? 0 : 1,
-                                                        scale: card.column === 'dropped' ? 0.8 : 1,
-                                                    }}
-                                                    exit={{
-                                                        opacity: 0,
-                                                        scale: 0.5
-                                                    }}
-                                                    transition={{
-                                                        duration: 0.6,
-                                                        ease: "easeInOut",
-                                                        y: { duration: card.column === 'dropped' ? 0.7 : 0.6 }
-                                                    }}
-                                                >
-                                                    <div className="flex items-center gap-2 mb-2">
-                                                        <div className="w-4 h-4 rounded bg-green-300"></div>
-                                                        <div className="h-2 w-20 bg-green-200 rounded"></div>
-                                                    </div>
-                                                    <div className="h-2 w-full bg-green-200 rounded mb-1.5"></div>
-                                                    <div className="h-2 w-3/4 bg-green-200 rounded"></div>
-                                                </motion.div>
-                                            );
-                                        })}
-                                    </AnimatePresence>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -28,7 +28,7 @@ SparkleIcon.displayName = 'SparkleIcon';
 // Extract StatCard for better composition and reusability
 const StatCard = memo(({ stat }: { stat: Stat }) => (
     <div
-        className="p-8 sm:p-9 text-center flex flex-col items-center justify-center group"
+        className="p-6 sm:p-9 text-center flex flex-col items-center justify-center group"
         role="group"
         aria-label={`${stat.value} ${stat.label}`}
     >
