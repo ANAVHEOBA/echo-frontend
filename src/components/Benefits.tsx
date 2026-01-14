@@ -1,4 +1,8 @@
+'use client';
+
 import { memo } from 'react';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer } from '@/utils/animations';
 
 // Types for better type safety
 interface Stat {
@@ -115,12 +119,16 @@ export default function Benefits() {
                 </p>
 
                 {/* Statistics Container */}
-                <div
+                <motion.div
                     className="w-full max-w-[1100px] mx-auto rounded-[15px] border border-[#EAF0DD] transition-shadow duration-300 bg-white/50 backdrop-blur-sm"
                     style={{
                         background: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.45) 0%, rgb(255, 255, 255) 100%)',
                         boxShadow: '0px -37px 40px 0px rgba(32, 46, 51, 0.05)'
                     }}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={staggerContainer}
                 >
                     <div
                         className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#EAF0DD]"
@@ -128,12 +136,12 @@ export default function Benefits() {
                         aria-label="Business impact statistics"
                     >
                         {stats.map((stat) => (
-                            <div key={stat.id} role="listitem">
+                            <motion.div key={stat.id} role="listitem" variants={fadeInUp}>
                                 <StatCard stat={stat} />
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Social proof - kept from original even if not in strict spec, but made subtle */}
                 <div className="text-center mt-10 sm:mt-12 opacity-0">

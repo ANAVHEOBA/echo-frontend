@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeInUp, scaleIn } from '@/utils/animations';
 
 export default function SundaysBack() {
     return (
@@ -10,29 +12,42 @@ export default function SundaysBack() {
                 background: 'radial-gradient(50% 50% at 50% 50%, #17435C 0%, #052233 100%)'
             }}
         >
-            <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+                className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={{
+                    animate: {
+                        transition: {
+                            staggerChildren: 0.1
+                        }
+                    }
+                }}
+            >
                 {/* Logo/Brand */}
-                <div className="flex justify-center mb-8">
+                <motion.div variants={fadeInUp} className="flex justify-center mb-8">
                     <div className="flex items-center gap-2 text-white">
                         <span className="text-2xl font-semibold tracking-tight">Ergo</span>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Main Heading */}
-                <h2
-                    className="text-white text-5xl sm:text-6xl lg:text-[80px] font-medium tracking-[-0.03em] leading-[1.1] mb-8 max-w-[900px] mx-auto"
+                <motion.h2
+                    variants={fadeInUp}
+                    className="text-white text-[42px] sm:text-[60px] lg:text-[80px] font-medium tracking-[-0.03em] leading-[1.1] mb-8 max-w-[900px] mx-auto"
                     style={{ fontFamily: '"Geist", "Inter", sans-serif' }}
                 >
                     Give your sales team their Sundays back
-                </h2>
+                </motion.h2>
 
                 {/* Subheading */}
-                <p className="text-[#C6D8DE] text-lg sm:text-xl mb-12">
+                <motion.p variants={fadeInUp} className="text-[#C6D8DE] text-lg sm:text-xl mb-12">
                     Join teams who have automated their revenue stack with Ergo
-                </p>
+                </motion.p>
 
                 {/* Tags/Pills */}
-                <div className="flex flex-wrap justify-center gap-4 mb-16">
+                <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4 mb-16">
                     {[
                         "Constant Access to Founders",
                         "White Glove Onboarding",
@@ -66,10 +81,10 @@ export default function SundaysBack() {
                             {text}
                         </div>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* CTA Area with Arrow */}
-                <div className="relative inline-block mb-32">
+                <motion.div variants={fadeInUp} className="relative inline-block mb-32">
                     <button
                         className="bg-[#C6D8DE] hover:bg-white text-[#052233] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center gap-2 group"
                     >
@@ -86,14 +101,20 @@ export default function SundaysBack() {
                     </button>
 
                     {/* Decorative Arrow */}
-                    <div className="absolute left-full top-1/2 ml-8 -translate-y-1/2 hidden md:block w-[160px]">
+                    <motion.div
+                        className="absolute left-full top-1/2 ml-8 -translate-y-1/2 hidden md:block w-[160px]"
+                        variants={scaleIn}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                    >
                         <svg viewBox="0 0 223 170" fill="none" className="w-full h-auto text-[#C6D8DE]">
                             <path d="M 206.482 57.889 C 181.106 48.022 149.973 42.798 124.842 56.368 C 108.782 65.04 98.253 85.368 101.552 103.375 C 104.667 120.381 114.971 136.285 133.205 138.161 C 142.71 139.138 151.435 135.818 154.429 126.059 C 159.004 111.149 145.803 93.438 134.555 85.268 C 99.452 59.77 45.921 54.129 6.916 73.577" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeMiterlimit="10" />
                             <path d="M 26.344 47.438 C 21.165 53.022 9.739 66.135 5.466 73.905" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeMiterlimit="10" />
                             <path d="M 5.465 73.9 C 12.83 75.842 29.503 80.793 37.273 85.065" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeMiterlimit="10" />
                         </svg>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Trust Badges */}
                 <div className="flex justify-center items-center gap-8 opacity-90">
@@ -130,7 +151,7 @@ export default function SundaysBack() {
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
         </section>
     );
 }

@@ -1,8 +1,9 @@
 'use client';
 
-import { memo } from 'react';
+import { useRef, memo } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { fadeInUp } from '@/utils/animations';
 
 // Sparkle icon matching the design
 const SparkleIcon = memo(({ className = "w-5 h-5" }: { className?: string }) => (
@@ -38,7 +39,13 @@ export default function ReportingIntelligence() {
 
             <div className="relative z-10 max-w-[1280px] mx-auto">
                 {/* Section Header */}
-                <div className="flex justify-center mb-6">
+                <motion.div
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    variants={fadeInUp}
+                    className="flex justify-center mb-6"
+                >
                     <div className="flex items-center gap-2">
                         <SparkleIcon className="w-5 h-5 text-[#C6D8DE]" />
                         <span
@@ -48,27 +55,41 @@ export default function ReportingIntelligence() {
                             Reporting and Intelligence
                         </span>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Main Heading */}
-                <h2
+                <motion.h2
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    variants={fadeInUp}
                     id="reporting-heading"
                     className="text-white text-4xl sm:text-5xl lg:text-[56px] font-medium text-center mb-4 tracking-[-0.03em] leading-tight max-w-[900px] mx-auto"
                     style={{ fontFamily: '"Geist", "Inter", sans-serif' }}
                 >
                     Sales Management&apos;s<br />Best Friend
-                </h2>
+                </motion.h2>
 
                 {/* Subheading */}
-                <p
+                <motion.p
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    variants={fadeInUp}
                     className="text-white/80 text-center text-base sm:text-lg mb-12 sm:mb-16 max-w-[800px] mx-auto leading-[1.6] tracking-[-0.01em]"
                     style={{ fontFamily: '"Geist", "Inter", sans-serif' }}
                 >
                     Ergo Reporting turns every interaction into actionable revenue intelligence—giving leadership instant visibility into trends, risks, and opportunities across the funnel.
-                </p>
+                </motion.p>
 
                 {/* Get Started Button */}
-                <div className="flex justify-center mb-16 sm:mb-20">
+                <motion.div
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                    variants={fadeInUp}
+                    className="flex justify-center mb-16 sm:mb-20"
+                >
                     <button
                         className="bg-white/90 hover:bg-white text-[#1a3742] px-6 py-3 rounded-lg font-medium text-base transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
                         style={{ fontFamily: '"Inter", sans-serif' }}
@@ -84,7 +105,7 @@ export default function ReportingIntelligence() {
                         </svg>
                         Get Started
                     </button>
-                </div>
+                </motion.div>
 
                 {/* Cards Container */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-[1200px] mx-auto">
